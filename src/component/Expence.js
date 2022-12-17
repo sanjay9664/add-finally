@@ -14,7 +14,8 @@ const [filteredYear , setFilteredYear] = useState("2020")
       // line no 8 change the div with Card and export card 
       <Card className="expence">
       <ExpenceFilter selected={filteredYear}  onchangeFilter={filterChangeHandler} />
-      {props.arr.map(expenc => <ExpenceItem title={expenc.title} amount={expenc.amount} date={expenc.date}/>)}
+      {props.arr.map(expenc => <ExpenceItem key={expenc.id} title={expenc.title} amount={expenc.amount} date={expenc.date} />)}
+      {}
       <ExpenceItem title={props.arr[0].title} amount={props.arr[0].amount} date={props.arr[0].date} />
       <ExpenceItem title={props.arr[1].title} amount={props.arr[1].amount} date={props.arr[1].date} />
       <ExpenceItem title={props.arr[2].title} amount={props.arr[2].amount} date={props.arr[2].date} />
